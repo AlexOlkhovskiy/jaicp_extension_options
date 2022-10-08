@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Options",
+  "description": "Плагин для расширения функционала веб-редактора платформы JAICP",
+  "version": "1.4",
+  "browser_action": {
+    "default_icon": "logo.png"
+  },
+  "background": {
+    "scripts": ["xlsx.full.min.js", "table.js"],
+    "persistent": false
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js", "xlsx.full.min.js", "parseString.js"],
+    "run_at": "document_end"
+  }],
+  "icons": {
+    "16": "logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "bookmarks",
+    "contextMenus",
+    "downloads",
+    "tabs",
+    "webNavigation"
+  ]
+}
